@@ -1,0 +1,33 @@
+input {
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid rgba(133, 5, 133, 0.726);
+  border-radius: 5px;
+}
+body {
+  font-family: "Baloo 2";
+  margin: 1rem 13rem;
+  background-color: rgb(158, 220, 247);
+}
+label {
+  font-size: 1.5rem;
+}
+
+input {
+  margin-bottom: 15px;
+  margin-top: 7px;
+}
+
+form {
+  text-align: center;
+}
+.btn{
+            
+  border-radius: 5px;
+  height: 60px;
+}
+.select{
+  border-radius: 5px;
+  height: 60px;
+
+}
