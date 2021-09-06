@@ -58,7 +58,7 @@ $conDB = mysqli_connect($db_host, $db_username, $db_password,$db_name)or
            <tr>
                <td>
    
-                   <a href="index.html">
+                   <a href="index.php">
                        <img src="logo2.png" width="300" height="175" />
                    </a>
                </td>
@@ -171,7 +171,7 @@ $conDB = mysqli_connect($db_host, $db_username, $db_password,$db_name)or
                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                       Already Have an account? <a href="login.html">Log In</a>
+                       Already Have an account? <a href="login.php">Log In</a>
                    </td>
                </tr>
        </table>

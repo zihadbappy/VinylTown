@@ -64,6 +64,7 @@ while($row = $result->fetch_assoc()){
         <td><?php echo $row['artist']; ?></td>
         <td><?php echo $row['price']; ?></td>
         <td><?php echo $row['added']; ?></td>
+        <td><?php echo $row['imgRef']; ?></td>
     </tr>
     <?php
 }
@@ -76,5 +77,8 @@ while($row = $result->fetch_assoc()){
 </form>
 
 <a href="adminInsert.php">Insert Data</a>
+<br>
+<br>
+<a href="index.php">Homepage</a>
 </body>
 </html>

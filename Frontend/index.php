@@ -8,7 +8,7 @@ $db_host = 'localhost';
 $conDB = mysqli_connect($db_host, $db_username, $db_password,$db_name)or
  die('Error: Could not connect to MySQL database.');
 
-$sql= "select * from albums limit 5";
+$sql= "select * from albums order by added desc limit 5";
 $result = mysqli_query($conDB, $sql);
 ?>
 <html lang="en">
@@ -33,7 +33,7 @@ $result = mysqli_query($conDB, $sql);
     <tr>
       <td>
 
-        <a href="index.html">
+        <a href="index.php">
           <img src="logo2.png" width="300" height="175" />
         </a>
       </td>
@@ -98,11 +98,11 @@ border: 1px solid rgb(0, 0, 0);
 background-color: white;" border="1" width="250" height="75" cellspacing="0" ;>
     <tr>
       
-      <th><a style="text-decoration:none; color: inherit; " href="index.html">Songs</a></th>
-      <th><a style="text-decoration:none; color: inherit;" href="index.html">Genres</a></th>
-      <th><a style="text-decoration:none; color: inherit;" href="index.html">Artists</a></th>
-      <th><a style="text-decoration:none; color: inherit;" href="index.html">Playlists</a></th>
-      <th><a style="text-decoration:none; color: inherit;" href="index.html">On Sale</a></th>
+      <th><a style="text-decoration:none; color: inherit; " href="index.php">Songs</a></th>
+      <th><a style="text-decoration:none; color: inherit;" href="index.php">Genres</a></th>
+      <th><a style="text-decoration:none; color: inherit;" href="index.php">Artists</a></th>
+      <th><a style="text-decoration:none; color: inherit;" href="index.php">Playlists</a></th>
+      <th><a style="text-decoration:none; color: inherit;" href="index.php">On Sale</a></th>
     </tr>
   </table>
 
@@ -161,7 +161,7 @@ background-color: white;" border="1" width="250" height="75" cellspacing="0" ;>
 
   <h1 style="font-family: Amaranth; margin: 2rem 0 0 0;  font-weight: 400; color: rgb(95, 1, 104);">
     Recently Added</h1>
-  <table style="margin: 1rem 0 0 0; width: 100%;">
+    <table style="margin: 1rem 0 0 0; width: 100%;">
     <tr style="width: 100%; background-color: rgba(226, 208, 226, 0.726); ">
     <?php
     while($row = $result->fetch_assoc()){

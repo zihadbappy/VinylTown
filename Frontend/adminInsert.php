@@ -40,6 +40,10 @@ if(isset($_POST['submit']))
 <input type="submit" value="Add Album" name="submit">
 </form>
 
-<a href="adminDashboard.php">Admin Dashboard</a>
+<a href="adminDashboard.php">Admin Dashboard</a> <br>
+<br>
+
+<a href="index.php">Homepage</a>
+
 </body>
 </html>
