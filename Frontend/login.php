@@ -13,18 +13,39 @@ if(isset($_POST['login_submit']))
     $username = $_POST['username'];
     $password =$_POST['password'];
     $sql="SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+
     $auth_user = mysqli_query($conDB,$sql);
-    if(mysqli_num_rows($auth_user)==1)
-    echo "Logged in";
-    else echo "wrong user info";
+    $row= mysqli_fetch_array($auth_user);
+    $count = mysqli_num_rows($auth_user); 
+    // if($counter>0)
+    if ($count > 0)
+    {
     
-}
+    switch ($row["userType"]){
+        case "user": 
+            echo "Logged in as user";
+            break;
+        case "admin":
+            header('Location: adminDashboard.php');
+            // echo "Logged in as admin";
+            break;
+
+        default: echo "Invalid login";
+
+    }
+    }
+    
+    // if($row["userType"]=="user")
+    // echo "Logged in as user";
+    // else 
+    // echo "Logged in as admin"; 
+
+    }
 
 else{
 ?>
 
 
-    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -69,7 +90,7 @@ else{
         <tr>
             <td>
 
-                <a href="index.html">
+                <a href="index.php">
                     <img src="logo2.png" width="300" height="175" />
                 </a>
             </td>

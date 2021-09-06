@@ -1,4 +1,16 @@
-<!DOCTYPE html>
+<?php
+
+$db_username = 'root'; 
+$db_password = ''; 
+$db_name = 'Vinyl';
+$db_host = 'localhost';
+  
+$conDB = mysqli_connect($db_host, $db_username, $db_password,$db_name)or
+ die('Error: Could not connect to MySQL database.');
+
+$sql= "select * from albums limit 5";
+$result = mysqli_query($conDB, $sql);
+?>
 <html lang="en">
 
 <head>
@@ -146,6 +158,32 @@ background-color: white;" border="1" width="250" height="75" cellspacing="0" ;>
     <img src="AfterHours.webp" alt="" style="max-height: 380px; max-width: 380px">
     <img src="blonde.webp" alt="" style="max-height: 380px; max-width: 380px;">
   </marquee> -->
+
+  <h1 style="font-family: Amaranth; margin: 2rem 0 0 0;  font-weight: 400; color: rgb(95, 1, 104);">
+    Recently Added</h1>
+  <table style="margin: 1rem 0 0 0; width: 100%;">
+    <tr style="width: 100%; background-color: rgba(226, 208, 226, 0.726); ">
+    <?php
+    while($row = $result->fetch_assoc()){
+      $image = $row['imgRef'];
+      ?>
+      
+      <td>
+        <img src='<?php echo $image;?>' style=" max-width: 300px; max-height: 300px;">
+        <br><a href="#" style="text-decoration:none; color: inherit; ">
+        <?php  echo $row['album']; ?> - <br><?php  echo $row['artist']; ?></a><br> $<?php  echo $row['price']; ?>
+        
+    </td> <br>
+   
+      <?php
+    }
+      ?>
+
+    </tr>
+
+  </table>
+
+
 
   <h1 style="font-family: Amaranth; margin: 2rem 0 0 0;  font-weight: 400; color: rgb(95, 1, 104);">
     Hot Picks for your Collection</h1>
